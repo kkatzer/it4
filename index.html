@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>4Prospects</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <img src="img/logo_P_200x45@2x.png" alt="4prospects" id="logo">
+
+  <div class="slide" id="no1">
+    <img src="img/logo_G_310x70@2x.png" alt="4prospects">
+    <h1><noscript>SEJA BEM-VINDO!</noscript></h1>
+  </div>
+
+  <div class="slide" id="no2">
+    <h2><noscript>Antes de qualquer coisa, precisamos esclarecer alguns detalhes,\sua experiência será personalizada conforme os dados que você fornecer...</noscript></h2>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+  <script>
+  function randomIntFromInterval(min,max)
+  {
+    return Math.floor(Math.random()*(max-min+1)+min);
+  }
+
+  function typeWrite(span){
+    return new Promise(function(resolve,reject) {
+      var text = $(span).text();
+      var randInt = 2000
+      for (var i = 0; i < text.length; i++) {
+        randInt += 70;
+        var typing = setTimeout(function(y){
+          if (text.charAt(y) == '\\') $(span).append("<br/>");
+          else $(span).append(text.charAt(y));
+        },randInt, i);
+      };
+      setTimeout(function() {
+        resolve()
+      },randInt+1000)
+    })
+  }
+
+  $(function(){
+    typeWrite('#no1 h1').then(function() {
+      return new Promise(function(resolve,reject) {
+        $('#no1').fadeOut("slow");
+        $('#logo').fadeIn("slow", function() {
+          resolve()
+        });
+      })
+    }).then(function() {
+      $('#no2').css('opacity','1')
+      return typeWrite('#no2 h2')
+    });
+  });
+  </script>
+</body>
+</html>

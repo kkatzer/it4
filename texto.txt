@@ -1,0 +1,59 @@
+FONTE
+OPEN SANS BOLD
+Títulos - 72px
+Sub-títulos - 32px
+Legendas - 22px
+
+OPEN SANS EXTRA BOLD
+Botões - 20px
+
+COR #00A99D
+
+SEJA BEM-VINDO!
+
+Antes de qualquer coisa, precisamos esclarecer alguns detalhes,_ sua experiência será personalizada conforme os dados que você fornecer...
+
+DADOS DA SUA EMPRESA
+
+Nome fantasia: Empresa
+Razão social: Empresa Inc.
+CNPJ:
+
+
+Vocês são...?
+
+Desenvolvedor/Fabricante
+Desenvolvemos soluções para o mercado de TI
+
+Canal/Revendedor
+Revendemos soluções para o mercado de TI
+
+
+Quais os tipos de produtos e/ou serviços sua empresa oferece?
+
+Produto/Serviço
+ERPs
+Virtualização
+Telefonia
+Backup
+Outsourcing
+Impressão
+Infraestrutura
+Governança
+Consolidação financeira
+Cloud Computing
+Big Data
+Segurança da informação
+Inteligência artificial
+
+Outros: Produto/Serviço
+
+
+Última pergunta, como vocês gostariam de se identificar nos e-mails enviados através de nossa plataforma?
+
+Remetente: Nome de sua empresa
+E-mail de envio: contato@empresa.com.br
+
+TUDO PRONTO!
+
+ACESSAR O 4PROSPECTS
