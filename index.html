@@ -19,6 +19,15 @@
 
   <div class="slide" id="no2">
     <h2><noscript>Antes de qualquer coisa, precisamos esclarecer alguns detalhes,\sua experiência será personalizada conforme os dados que você fornecer...</noscript></h2>
+    <form>
+      <h2>DADOS DA SUA EMPRESA</h2>
+      <label for="nome">Nome fantasia:</label>
+      <input type="text" name="nome" placeholder="Empresa">
+      <label for="razao">Razão social:</label>
+      <input type="text" name="razao" placeholder="Empresa Inc.">
+      <label for="cnpj">CNPJ:</label>
+      <input type="text" name="cnpj" placeholder="000.000.0000/0000-0">
+    </form>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
@@ -35,7 +44,7 @@
       var text = $(span).text();
       var randInt = 2000
       for (var i = 0; i < text.length; i++) {
-        randInt += 70;
+        randInt += 70; //velocidade
         var typing = setTimeout(function(y){
           if (text.charAt(y) == '\\') $(span).append("<br/>");
           else $(span).append(text.charAt(y));
@@ -57,7 +66,9 @@
       })
     }).then(function() {
       $('#no2').css('opacity','1')
-      return typeWrite('#no2 h2')
+      return typeWrite('#no2 > h2')
+    }).then(function() {
+
     });
   });
   </script>
