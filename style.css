@@ -26,16 +26,16 @@ html, body {
   width: 100%;
   position: absolute;
   top: 12.5%;
-  left: 0;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  opacity: 0;
+  opacity: 1;
+  left: 100%;
 }
 
 .slide#no1 {
-  opacity: 1;
+  left: 0;
 }
 
 h1 {
@@ -72,6 +72,11 @@ button {
   height: 90px;
 }
 
+#no2 {
+  left: 0;
+  opacity: 0;
+}
+
 #no2 h2 {
   height: 80px;
 }
@@ -85,18 +90,9 @@ button {
   opacity: 0;
 }
 
-#no3 {
-  opacity: 1;
-  left: 100%;
-}
-
 #no3 > button {
   opacity: 0;
   margin-bottom: -15px;
-}
-
-#no4 h2 {
-  height: 40px;
 }
 
 .options {
@@ -125,9 +121,8 @@ button {
   margin: 20px auto;
 }
 
-#no4 {
-  opacity: 1;
-  left: 100%;
+#no4 h2 {
+  height: 40px;
 }
 
 .selects {
@@ -152,6 +147,31 @@ button {
 
 .selects select {
   flex-grow: 1;
+}
+
+#no5 form {
+  margin: 120px;
+}
+
+#no5 form > * {
+  opacity: 0;
+}
+
+#no6 h2 {
+  margin-top: 50px;
+  height: 40px;
+}
+
+#lottie {
+  height: 425.5px;
+}
+
+#no6 button {
+  opacity: 0;
+}
+
+form {
+  min-width: 700px;
 }
 
 label {
