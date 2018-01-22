@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.3.2/css/simple-line-icons.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css');
 
 html, body {
   width: 100%;
@@ -6,6 +8,7 @@ html, body {
   background-color: #00A99D;
   color: white;
   font-family: 'Open Sans', sans-serif;
+  overflow: hidden;
 }
 
 #logo {
@@ -80,6 +83,75 @@ button {
 
 #no2 form > * {
   opacity: 0;
+}
+
+#no3 {
+  opacity: 1;
+  left: 100%;
+}
+
+#no3 > button {
+  opacity: 0;
+  margin-bottom: -15px;
+}
+
+#no4 h2 {
+  height: 40px;
+}
+
+.options {
+  display: flex;
+  flex-flow: row nowrap;
+  opacity: 0;
+}
+
+.options > div {
+  border: 1px solid white;
+  margin: 25px;
+  max-width: 350px;
+  padding: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.options > div.selected {
+  border-width: 3px;
+  padding: 28px;
+}
+
+.options img {
+  max-width: 85px;
+  display: block;
+  margin: 20px auto;
+}
+
+#no4 {
+  opacity: 1;
+  left: 100%;
+}
+
+.selects {
+  margin: 50px;
+  height: 290px;
+}
+
+.selects .form-group {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.selects img {
+  max-width: 30px;
+  margin: 5px;
+}
+
+.selects img[onclick] {
+  cursor: pointer;
+}
+
+.selects select {
+  flex-grow: 1;
 }
 
 label {

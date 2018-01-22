@@ -33,8 +33,68 @@
         <label for="cnpj" class="col-sm-5 col-form-label">CNPJ:</label>
         <input type="text" name="cnpj" placeholder="000.000.0000/0000-0" class="col-sm-7 form-control">
       </div>
-      <button type="button" name="submit" class="btn">OK</button>
+      <button type="button" name="submit" class="btn" onclick="slideTo3()">OK</button>
     </form>
+  </div>
+
+  <div class="slide" id="no3">
+    <h2><noscript>Vocês são...?</noscript></h2>
+    <div class="options">
+      <div id="dev" onclick="select(this)">
+        <img src="img/desenvolvedor_85x85@2x.png" alt="Desenvolvedor/Fabricante">
+        <h2>Desenolvedor/<br>Fabricante</h2>
+        <p>Desenvolvemos soluções para o mercado de TI</p>
+      </div>
+      <div id="sell" onclick="select(this)">
+        <img src="img/revendedor_85x85@2x.png" alt="Canal/Revendedor">
+        <h2>Canal/<br>Revendedor</h2>
+        <p>Revendemos soluções para o mercado de TI</p>
+      </div>
+    </div>
+    <div style="opacity:0"><button type="button" name="submit" class="btn" onclick="slideTo4()">OK</button></div>
+  </div>
+
+  <div class="slide" id="no4">
+    <h2><noscript>Quais os tipos de produtos e/ou serviços que sua empresa oferece?</noscript></h2>
+    <div class="selects">
+      <div class="form-group">
+        <img src="img/dot_30x30@2x.png">
+        <select class="form-control">
+          <option value="" disabled selected>Produto/Serviço</option>
+          <option value="erps">ERPs</option>
+          <option value="virtualizacao">Virtualização</option>
+          <option value="telefonia">Telefonia</option>
+          <option value="backup">Backup</option>
+          <option value="outsourcing">Outsourcing</option>
+          <option value="impressao">Impressão</option>
+          <option value="infraestrutura">Infraestrutura</option>
+          <option value="governanca">Governança</option>
+          <option value="consolidacaofinanceira">Consolidação financeira</option>
+          <option value="cloudcomputing">Cloud Computing</option>
+          <option value="bigdata">Big Data</option>
+          <option value="segurancadainformacao">Segurança da informação</option>
+          <option value="inteligenciaartificial">Inteligência artificial</option>
+        </select>
+      </div>
+      <div class="form-group adiciona">
+        <img src="img/more_30x30@2x.png" onclick="adicionaSelect()">
+        <select class="form-control" disabled>
+          <option value="" disabled selected>Produto/Serviço</option>
+          <option value="erps">ERPs</option>
+          <option value="virtualizacao">Virtualização</option>
+          <option value="telefonia">Telefonia</option>
+          <option value="backup">Backup</option>
+          <option value="outsourcing">Outsourcing</option>
+          <option value="impressao">Impressão</option>
+          <option value="infraestrutura">Infraestrutura</option>
+          <option value="governanca">Governança</option>
+          <option value="consolidacaofinanceira">Consolidação financeira</option>
+          <option value="cloudcomputing">Cloud Computing</option>
+          <option value="bigdata">Big Data</option>
+          <option value="segurancadainformacao">Segurança da informação</option>
+          <option value="inteligenciaartificial">Inteligência artificial</option>
+        </select></div>
+    </div>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
@@ -80,6 +140,62 @@
       });
     });
   });
+
+  function slideTo3() {
+    $('#no2').animate({left:'-100%'}, 1000)
+    $('#no3').animate({left:0}, 1000, function() {
+      typeWrite('#no3 > h2').then(function() {
+        $('.options').animate({'opacity':1},1000)
+        $('.options + div').delay(500).animate({'opacity':1},1000)
+      })
+    })
+  }
+
+  function select(div) {
+    if (!$(div).hasClass('selected')) {
+      $('.options > div.selected').removeClass('selected')
+      $(div).addClass('selected')
+    }
+  }
+
+  function slideTo4() {
+    $('#no3').animate({left:'-100%'}, 1000)
+    $('#no4').animate({left:0}, 1000, function() {
+      typeWrite('#no4 > h2').then(function() {
+      })
+    })
+  }
+
+  function adicionaSelect() {
+    var select = `
+      <div class="form-group">
+        <img src="img/less_30x30@2x.png" onclick="removeSelect(this)">
+        <select class="form-control">
+          <option value="" disabled selected>Produto/Serviço</option>
+          <option value="erps">ERPs</option>
+          <option value="virtualizacao">Virtualização</option>
+          <option value="telefonia">Telefonia</option>
+          <option value="backup">Backup</option>
+          <option value="outsourcing">Outsourcing</option>
+          <option value="impressao">Impressão</option>
+          <option value="infraestrutura">Infraestrutura</option>
+          <option value="governanca">Governança</option>
+          <option value="consolidacaofinanceira">Consolidação financeira</option>
+          <option value="cloudcomputing">Cloud Computing</option>
+          <option value="bigdata">Big Data</option>
+          <option value="segurancadainformacao">Segurança da informação</option>
+          <option value="inteligenciaartificial">Inteligência artificial</option>
+        </select>
+      </div>
+      `;
+
+      if ($('.selects .form-group').length < 5)
+        $(select).insertBefore('.adiciona')
+  }
+
+  function removeSelect(self) {
+    $(self).parent().remove();
+  }
   </script>
 </body>
 </html>
