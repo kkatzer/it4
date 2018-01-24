@@ -185,6 +185,10 @@ button.btn {
   margin-top: 60px;
 }
 
+.form-group:nth-of-type(6).adiciona {
+  display: none;
+}
+
 @media (min-width: 769px) {
   form {
     min-width: 700px;
