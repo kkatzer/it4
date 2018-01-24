@@ -233,7 +233,7 @@ button.btn {
     margin-top: 80px;
   }
 
-  form {
+  form, #no4 form-group {
     margin: 30px;
   }
 
