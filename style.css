@@ -4,34 +4,34 @@
 
 html, body {
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   background-color: #00A99D;
   color: white;
   font-family: 'Open Sans', sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 #logo {
   width: 200px;
   height: 45px;
   position: absolute;
-  top: 10%;
+  top: 50px;
   left: 50%;
   transform: translateX(-50%);
   display: none;
 }
 
 .slide {
-  height: 75%;
   width: 100%;
   position: absolute;
-  top: 12.5%;
+  margin-top: 140px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   opacity: 1;
   left: 100%;
+  padding: 10px;
 }
 
 .slide#no1 {
@@ -39,26 +39,26 @@ html, body {
 }
 
 h1 {
-  font-size: 72px;
+  font-size: 45px;
   font-weight: bold;
   margin: 25px;
   text-align: center;
 }
 
 h2 {
-  font-size: 32px;
+  font-size: 27px;
   font-weight: bold;
   text-align: center;
 }
 
 p {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: bold;
   text-align: center;
 }
 
 button {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 800;
   text-align: center;
 }
@@ -77,13 +77,12 @@ button {
   opacity: 0;
 }
 
-#no2 h2 {
-  height: 80px;
+#no2 > h2 {
+  min-height: 80px;
 }
 
 #no2 form {
   margin-top: 50px;
-  min-width: 1180px;
 }
 
 #no2 form > * {
@@ -97,7 +96,7 @@ button {
 
 .options {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
   opacity: 0;
 }
 
@@ -122,12 +121,11 @@ button {
 }
 
 #no4 h2 {
-  height: 40px;
+  min-height: 40px;
 }
 
 .selects {
   margin: 50px;
-  height: 290px;
 }
 
 .selects .form-group {
@@ -149,10 +147,6 @@ button {
   flex-grow: 1;
 }
 
-#no5 form {
-  margin: 120px;
-}
-
 #no5 form > * {
   opacity: 0;
 }
@@ -163,21 +157,17 @@ button {
 }
 
 #lottie {
-  height: 425.5px;
+  width: 100%;
+  max-width: 420px;
 }
 
 #no6 button {
   opacity: 0;
 }
 
-form {
-  min-width: 700px;
-}
-
 label {
-  font-size: 32px !important;
+  font-size: 26px !important;
   font-weight: bold;
-  text-align: right;
 }
 
 input {
@@ -193,4 +183,61 @@ button.btn {
   color: #00A99D;
   background-color: white;
   margin-top: 60px;
+}
+
+@media (min-width: 769px) {
+  form {
+    min-width: 700px;
+  }
+
+  #no2 form {
+    min-width: 1180px;
+  }
+
+  h1 {
+    font-size: 72px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  p {
+    font-size: 22px;
+  }
+
+  button {
+    font-size: 20px;
+  }
+
+  label {
+    font-size: 32px !important;
+    text-align: right;
+  }
+
+  .options {
+    flex-direction: row;
+  }
+
+  .selects {
+    height: 290px;
+  }
+
+  #no5 form {
+    margin-top: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  #no1 {
+    margin-top: 80px;
+  }
+
+  form {
+    margin: 30px;
+  }
+
+  #lottie {
+    margin-top: -75px;
+  }
 }

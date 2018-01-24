@@ -138,9 +138,10 @@
       var text = $(span).text();
       var randInt = 1000
       for (var i = 0; i < text.length; i++) {
-        randInt += 70; //velocidade
+        randInt += 50; //velocidade
         var typing = setTimeout(function(y){
           if (text.charAt(y) == '\\') $(span).append("<br/>");
+          else if (text.charAt(y) == '-') $(span).append('&#8209;')
           else $(span).append(text.charAt(y));
         },randInt, i);
       };
@@ -171,6 +172,9 @@
   function slideTo3() {
     $('#no2').animate({left:'-100%'}, 1000)
     $('#no3').animate({left:0}, 1000, function() {
+      $('html, body').animate({
+          scrollTop: 0
+      }, 500);
       typeWrite('#no3 > h2').then(function() {
         $('.options').animate({'opacity':1},1000)
         $('.options + div').delay(500).animate({'opacity':1},1000)
@@ -188,9 +192,13 @@
   function slideTo4() {
     $('#no3').animate({left:'-100%'}, 1000)
     $('#no4').animate({left:0}, 1000, function() {
+      $('html, body').animate({
+          scrollTop: 0
+      }, 500);
       typeWrite('#no4 > h2').then(function() {
           $('#no4 .form-group, #no4 button').each(function(i) {
-            $(this).delay( i*(500) ).animate({opacity:1}, 1000);
+            if ($(this).hasClass('adiciona')) $(this).delay( i*(500) ).animate({opacity:0.5}, 1000);
+            else $(this).delay( i*(500) ).animate({opacity:1}, 1000);
           });
       })
     })
@@ -230,6 +238,9 @@
   function slideTo5() {
     $('#no4').animate({left:'-100%'}, 1000)
     $('#no5').animate({left:0}, 1000, function() {
+      $('html, body').animate({
+          scrollTop: 0
+      }, 500);
       typeWrite('#no5 > h2').then(function() {
         $('#no5 form > *').each(function(i) {
           $(this).delay( i*(500) ).animate({opacity:1}, 1000);
@@ -242,7 +253,7 @@
   var params = {
       container: document.getElementById('lottie'),
       renderer: 'svg',
-      loop: true,
+      loop: false,
       autoplay: true,
       animationData: animationData
   };
@@ -252,6 +263,9 @@
   function slideTo6() {
     $('#no5').animate({left:'-100%'}, 1000)
     $('#no6').animate({left:0}, 1000, function() {
+      $('html, body').animate({
+          scrollTop: 0
+      }, 500);
       typeWrite('#no6 > h2').then(function() {
         var anim;
 
